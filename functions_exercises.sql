@@ -7,7 +7,9 @@ or first_name = 'Maya')
 and gender = 'M'
 order by last_name asc, first_name desc;
 
-select concat(first_name, last_name) from employees
+select concat(first_name, ' ', last_name)
+as 'EMPLOYEE FULL NAME'
+from employees
 where (last_name like '%e'
 and last_name like 'E%')
 order by emp_no desc;
