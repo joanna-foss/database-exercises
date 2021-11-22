@@ -11,9 +11,9 @@ group by last_name;
 
 select distinct last_name
 from employees
-where (last_name like '%e'
-and last_name like 'e%')
-group by last_name;
+where last_name like 'e%e'
+group by last_name
+order by last_name;
 
 select distinct last_name from employees
 where (last_name
@@ -30,3 +30,9 @@ where (first_name = 'Irena'
 or first_name = 'Vidya'
 or first_name = 'Maya')
 group by gender;
+
+select count(*) as 'number of names', last_name as 'last name'
+from employees
+where last_name like '%q%'
+and last_name not like '%qu%'
+group by last_name order by count(*) desc;
